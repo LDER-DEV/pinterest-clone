@@ -80,6 +80,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+       <Text style={styles.logo}>Pinterest</Text>
+       <section style ={styles.searchAndMenu}>
         <Searchbar
           placeholder="Search pins"
           onChangeText={setSearchQuery}
@@ -99,6 +101,7 @@ const HomeScreen = () => {
             />
           }
         >
+          
           <Menu.Item
             onPress={() => {
               setMenuVisible(false);
@@ -124,6 +127,7 @@ const HomeScreen = () => {
             leadingIcon="logout"
           />
         </Menu>
+        </section>
       </View>
 
       <FlatList
@@ -151,16 +155,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
     padding: 8,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
+  searchAndMenu:{
+    display: 'flex',
+    flexDirection: 'row',  
+    alignItems: 'center',
+    width: '100%',
+  },
   searchBar: {
     flex: 1,
-    marginRight: 8,
+    marginRight: 0,
+    width: '80%',
     backgroundColor: '#f5f5f5',
     elevation: 0,
   },
@@ -191,6 +202,14 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
+  logo: {
+    position: 'relative',
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#E60023',
+    marginBottom: 14,
+  },
+
 });
 
 export default HomeScreen; 
